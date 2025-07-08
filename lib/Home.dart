@@ -22,11 +22,7 @@ class Home extends StatelessWidget {
             fontWeight: FontWeight.w200, color: Colors.grey, fontSize: 20),
       ),
       Text('Test 2'),
-      Text(
-        'Test 3',
-        style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue),
-      ),
+
       Text(
         'Test 1',
         style: TextStyle(
