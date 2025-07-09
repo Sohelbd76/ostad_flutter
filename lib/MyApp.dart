@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
+import 'button.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Button(),
     );
   }
 }
