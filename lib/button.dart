@@ -20,13 +20,20 @@ class Button extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // MainAxisAlignment.center;
-               SizedBox(height:10),
-            ElevatedButton(onPressed: (){print('Enter');},child: Text('Submit'),style:ElevatedButton.styleFrom(
+            //    SizedBox(height:10),
+            SizedBox(height:10),
+            SizedBox(
+                width: double.infinity,
+            child:
+            ElevatedButton(onPressed: (){print('Enter');},child: Text('Submit'),
+              style:ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
 
-            ),
+
+            ),),
+
             SizedBox(height: 10),
             OutlinedButton(onPressed: (){}, child: Text('outline button',style: TextStyle(color: Colors.black,
              fontSize: 20,fontWeight: FontWeight.bold,
