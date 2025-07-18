@@ -57,10 +57,10 @@ class Field extends StatelessWidget {
              SizedBox(height: 30,width: double.infinity,
                child: Card(
                  child: ElevatedButton(onPressed: (){
-                 
+
                    if(phonecontroller.text.isEmpty){
                      ScaffoldMessenger.of(context).showSnackBar(
-                 
+
                          SnackBar(content:Text( 'Please enter phone number')));
                    }
                    else if(phonecontroller.text.length < 11 || phonecontroller.text.length > 11 ){
@@ -71,17 +71,17 @@ class Field extends StatelessWidget {
                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                        content: Text(phonecontroller.text)));
                    }
-                 
+
                    },
                      style: ElevatedButton.styleFrom(
                        backgroundColor: Colors.blue
                      ),
-                 
+
                      child: Text('Enter',style: TextStyle(
                  fontSize: 20,fontWeight: FontWeight.bold,height: 1,
-                 
+
                       // decoration:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
-                 
+
                  ),)),
                ),
              ),
@@ -94,7 +94,7 @@ class Field extends StatelessWidget {
                  child: ElevatedButton(onPressed: (){
                    phonecontroller.clear();
                    passwordcontroller.clear();
-                 
+
                  },
                    style: ElevatedButton.styleFrom(
                        backgroundColor: Colors.blue,),
@@ -103,7 +103,7 @@ class Field extends StatelessWidget {
                ),
 
              ),
-SizedBox(height: 20),
+        SizedBox(height: 20),
              Container(
                alignment: Alignment.center,
                height: 90,
