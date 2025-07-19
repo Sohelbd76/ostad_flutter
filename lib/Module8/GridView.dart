@@ -11,7 +11,7 @@ class gridV extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       body: GridView.count(
-          crossAxisCount:4,
+          crossAxisCount:2,
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
         children: List.generate(50, (index){
