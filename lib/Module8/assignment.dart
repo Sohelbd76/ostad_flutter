@@ -75,25 +75,40 @@ class Assignment extends StatelessWidget {
                   Stack(
                       children: [
                         Card(child: Image.asset('asset/maldives.png')),
-                        Text('Maldives',style: TextStyle(color: Colors.white),)
+                        Positioned(
+                            right: 80,
+                            bottom: 60,
+                            child: Text('Maldives',style: TextStyle(color: Colors.white,fontSize: 20),))
                       ]
                   ),
                   Stack(
                       children: [
                         Card(child: Image.asset('asset/dubai.png')),
-                        Text('Dubai',style: TextStyle(color: Colors.white),)
+                        Positioned(
+                            right: 80,
+                            bottom: 60,
+                            child: Text('Dubai',style: TextStyle(color: Colors.white,fontSize: 20),))
                       ]
                   ),
                   Stack(
                       children: [
                         Card(child: Image.asset('asset/Bali.png')),
-                        Text('Bali',style: TextStyle(color: Colors.white),)
+                        Positioned(
+                            right: 100,
+                            bottom: 110,child: Text('Bali',style: TextStyle(color: Colors.white,fontSize: 20),))
                       ]
                   ),
 
                 ],
               ),
             ),
+          ListView(
+            children: [
+
+              Image.asset('asset/maldives.png'),
+              Image.asset('asset/maldives.png'),
+            ],
+          )
           ],
         ),
       ),
