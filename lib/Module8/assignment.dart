@@ -102,16 +102,12 @@ class Assignment extends StatelessWidget {
                 ],
               ),
             ),
-          ListView(
-            children: [
 
-              Image.asset('asset/maldives.png'),
-              Image.asset('asset/maldives.png'),
-            ],
-          )
+
           ],
         ),
       ),
+
     );
   }
 }
