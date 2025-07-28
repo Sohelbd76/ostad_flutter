@@ -25,9 +25,9 @@ class gridVBuidler extends StatelessWidget {
     child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-    Icon(Icons.phone_android,color: Colors.red,size: 40,),
+    Icon(Icons.phone_android,color: Colors.red,size: 20,),
     SizedBox(height: 10,),
-    Text('Cash out',style: TextStyle(fontSize: 15),),
+    Text('Cash out',style: TextStyle(fontSize: 10),),
       Text(index.toString()),
     ],
     ),

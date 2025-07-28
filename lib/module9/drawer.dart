@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_flutter/Module8/assignment.dart';
 import 'package:ostad_flutter/Module8/listView.dart';
+import 'package:ostad_flutter/Module8/stack.dart';
+import 'package:ostad_flutter/module9/test.dart';
+import 'package:ostad_flutter/module9/widget.dart';
 
 import '../Module8/GridView_Builder.dart';
 
@@ -13,7 +16,6 @@ class drawerV extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
           title: Text('Navigation drawer'),
           bottom: TabBar(
 
@@ -35,6 +37,9 @@ class drawerV extends StatelessWidget {
           ),
         ),
         body:
+
+
+
 
         // TabBarView(
         //   children: [
@@ -65,11 +70,16 @@ class drawerV extends StatelessWidget {
 
         TabBarView(
           children: [
-            Assignment(),
-            gridVBuidler(),
-            listV()
+            NewWidget(img: 'asset/paris.png', text: 'paris'),
+            stackV(),
+            // NewWidget(img: 'asset/maldives.png', text: 'Maldiv'),
+            test(),
+
+
           ],
         ),
+
+
 
 
 

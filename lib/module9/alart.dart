@@ -132,7 +132,8 @@ class alart extends StatelessWidget {
         ),
       ));
     }
-    Size ScreenSize=MediaQuery.of(context).size;
+     Size ScreenSize=MediaQuery.of(context).size;
+
 
     return Scaffold(
         appBar: AppBar(
