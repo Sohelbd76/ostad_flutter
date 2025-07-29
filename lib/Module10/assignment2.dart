@@ -32,11 +32,12 @@ class assignment2 extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Image.network(
-              'https://w7.pngwing.com/pngs/537/866/png-transparent-flutter-hd-logo-thumbnail.png',
-              scale: 3,
-            ),
-            SizedBox(height: 10,),
+            Image.asset('asset/png-transparent-flutter-hd-logo-thumbnail.png',scale: 3,),
+            // Image.network(
+            //   'https://w7.pngwing.com/pngs/537/866/png-transparent-flutter-hd-logo-thumbnail.png',
+            //   scale: 3,
+            // ),
+            const SizedBox(height: 10,),
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context)
