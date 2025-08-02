@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Field extends StatelessWidget {
@@ -85,7 +86,7 @@ class Field extends StatelessWidget {
                  ),)),
                ),
              ),
-             SizedBox(height: 10,),
+             const SizedBox(height: 10,),
              SizedBox(
                height: 40,
                width: 200,
@@ -98,7 +99,7 @@ class Field extends StatelessWidget {
                  },
                    style: ElevatedButton.styleFrom(
                        backgroundColor: Colors.blue,),
-                     child: Text('Clear all',
+                     child: const Text('Clear all',
                    style: TextStyle(fontSize: 30,backgroundColor:Colors.blue,color: Colors.red),)),
                ),
 
@@ -110,7 +111,7 @@ class Field extends StatelessWidget {
                width: 320,
                decoration: BoxDecoration(borderRadius: BorderRadius.circular(200),
                    color: Colors.yellow,
-               boxShadow: [BoxShadow(
+               boxShadow: const [BoxShadow(
                  color: Colors.green,offset: Offset(10, 10),
                )],
                  border: Border.all(color: Colors.red,width: 10,),
