@@ -5,7 +5,9 @@ class livetest2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController phoneController = TextEditingController();
+    TextEditingController nameController = TextEditingController();
+    TextEditingController ageController = TextEditingController();
+    TextEditingController salaryController = TextEditingController();
     final _formKey = GlobalKey<FormState>();
     return Scaffold(
         appBar: AppBar(
@@ -20,28 +22,59 @@ class livetest2 extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
-                      controller: phoneController,
+                      controller: nameController,
                       decoration: InputDecoration(
                         hintText: 'Name',
                       ),
+                      validator: (value){
+                        if(value== null){
+                          return'Enter Name';
+                        }
+                        else if (value.isEmpty) {
+                          return 'Name should not be empty';
+                        }
+                        return null;
+                      },
                     ),
                     TextFormField(
-                      controller: phoneController,
+                      controller: ageController,
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         hintText: 'Age',
                       ),
+                      validator: (value){
+                        if(value== null){
+                          return 'Enter Age';
+                        }
+                        else if(value.isEmpty){
+                          return 'Age should not be empty';
+                        }
+                        return null;
+                      },
                     ),
                     TextFormField(
-                      controller: phoneController,
+                      controller: salaryController,
                       decoration: InputDecoration(
                         hintText: 'Salary',
                       ),
-                    )
+                      validator: (value) {
+                        if (value == null) {
+                          return 'Enter Salary';
+                        }
+                        else if (value.isEmpty) {
+                          return 'salary should not be empty';
+                        }
+
+                        return null;
+                      } )
                   ],
                 ),
               )),
           SizedBox(height: 10,),
-          ElevatedButton(onPressed: () {}, child: Text('Add Employee')),
+          ElevatedButton(onPressed: () {
+            if(_formKey.currentState!.validate()){
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Employee Added')));}
+          }, child: Text('Add Employee')),
         ]));
   }
 }
