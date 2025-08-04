@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_flutter/Module%2011/counterApp.dart';
+import 'package:ostad_flutter/Module%2011/lifeCycle.dart';
 import 'package:ostad_flutter/Module8/GridView.dart';
 import 'package:ostad_flutter/Module8/stack.dart';
 import 'package:ostad_flutter/livetest2.dart';
@@ -57,7 +59,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Sohel Flutter',
       debugShowCheckedModeBanner: false,
-      home:testm11()
+      home:lifeCycle()
     );
   }
 }
