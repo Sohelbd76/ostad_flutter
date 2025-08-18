@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_flutter/Module%2011/class_2/calculator.dart';
+import 'package:ostad_flutter/Module%2011/class_2/MoneyMGM.dart';
 import 'package:ostad_flutter/Module%2011/counterApp.dart';
 import 'package:ostad_flutter/Module%2011/lifeCycle.dart';
 import 'package:ostad_flutter/Module8/GridView.dart';
@@ -12,6 +12,7 @@ import 'package:ostad_flutter/module9/test.dart';
 // import 'package:ostad_flutter/Field.dart';
 
 import 'Module 11/class3/waterTracker.dart';
+import 'Module 11/class_2/todos_homescreen.dart';
 import 'Module 11/faceBook_login_page.dart';
 
 import 'Module8/GridView_Builder.dart';
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Sohel Flutter',
       debugShowCheckedModeBanner: false,
-      home:WaterTracker()
+      home:HomeScreen()
     );
   }
 }
