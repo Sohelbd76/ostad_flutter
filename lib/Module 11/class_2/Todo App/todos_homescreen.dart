@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_flutter/Module%2011/class_2/todo.dart';
+import 'package:ostad_flutter/Module%2011/class_2/Todo%20App/todo.dart';
 
 import 'add_new_todo_screen.dart';
 
@@ -12,6 +12,24 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Todo> todoList = [];
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    print('Dispose');
+    super.dispose();
+  }
+  @override
+  void didChangeDependencies() {
+    print('DidChargeDependence');
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
+  @override
+  void initState() {
+    print('Init state');
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
