@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:ostad_flutter/Module%2012%20API/productItem_widget.dart';
+import 'dart:math';
 
+import 'package:flutter/material.dart';
+import 'package:ostad_flutter/Module%2012%20API/API_CRUD%20_Project/productItem_widget.dart';
 
 import 'add_new_product_screeen.dart';
+
 
 class homeScreen_api extends StatefulWidget {
   const homeScreen_api({super.key});
@@ -16,7 +18,14 @@ class _homeScreenState extends State<homeScreen_api> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product list'),
+        title: Text('Product list',style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.green,
+       //  actions: [Column(
+       //   children: [
+       //     Icon(Icons.menu),
+       //     Icon(Icons.brightness_3_sharp)
+       //   ],
+       // ),],
         centerTitle: true,
       ),
       body: ListView.separated(

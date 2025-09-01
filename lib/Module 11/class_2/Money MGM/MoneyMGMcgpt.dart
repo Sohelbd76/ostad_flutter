@@ -13,6 +13,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import '../../../Module 12 API/Assignment_CRUD_APP/home_screen.dart';
+
 void main() => runApp(MoneyManagerApp());
 
 class MoneyManagerApp extends StatelessWidget {
@@ -29,7 +31,7 @@ class MoneyManagerApp extends StatelessWidget {
           titleLarge: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
-      home: HomeScreen(),
+      home: HomeScreenMoneyMGM(),
     );
   }
 }
@@ -50,12 +52,12 @@ class Transaction {
   });
 }
 
-class HomeScreen extends StatefulWidget {
+class HomeScreenMoneyMGM extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreenMoneyMGM> {
   final List<Transaction> _transactions = List.generate(
     6,
         (i) => Transaction(

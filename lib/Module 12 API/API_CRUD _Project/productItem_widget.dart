@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_flutter/Module%2012%20API/update_Screen.dart';
+import 'package:ostad_flutter/Module%2012%20API/API_CRUD%20_Project/update_Screen.dart';
+
 
 class product_Item_widget extends StatelessWidget {
   const product_Item_widget({
@@ -35,7 +36,7 @@ class product_Item_widget extends StatelessWidget {
                     value: productOption.update, child: Text('Update'))
               ];
             },
-              onSelected: (productOption selectedOption){
+              onSelected: (productOption selectedOption){   // onSelected ar maddoma option jar maddoma selectedOption a joma hoba productOption(delete, update) ar konta select korci.
                 print(selectedOption);
                 if(selectedOption == productOption.update){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> update_Screen()));
@@ -50,4 +51,4 @@ class product_Item_widget extends StatelessWidget {
   }
 }
 
-enum productOption { delete, update }
+enum productOption { delete, update }   // Ai Enum class ar maddoma only 2 ta value use kora jaba (delete, update)
