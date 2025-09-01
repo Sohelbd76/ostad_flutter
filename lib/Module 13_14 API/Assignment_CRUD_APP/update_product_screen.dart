@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_flutter/Module%2012%20API/Assignment_CRUD_APP/product_model.dart';
+import 'package:ostad_flutter/Module%2013_14%20API/Assignment_CRUD_APP/product_model.dart';
 
 class UpdateProductScreen extends StatefulWidget {
   const UpdateProductScreen({super.key, required this.product});
@@ -31,7 +31,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Update product')),
+      appBar: AppBar(title: Text('Update product'),
+        centerTitle: true,backgroundColor: Colors.green,shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20),bottomRight: Radius.circular(20))) ,),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:ostad_flutter/Module%2012%20API/Assignment_CRUD_APP/snackbar_message.dart';
+import 'package:ostad_flutter/Module%2013_14%20API/Assignment_CRUD_APP/snackbar_message.dart';
 
 
 class AddNewProductScreen extends StatefulWidget {
@@ -24,7 +24,8 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Add new product')),
+      appBar: AppBar(title: const Text('Add new product'),
+      centerTitle: true,backgroundColor: Colors.green,shape:RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40),bottomRight: Radius.circular(40))) ,),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
