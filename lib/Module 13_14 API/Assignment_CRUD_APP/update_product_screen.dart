@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:ostad_flutter/Module%2013_14%20API/Assignment_CRUD_APP/product_model.dart';
 
 class UpdateProductScreen extends StatefulWidget {
@@ -31,9 +33,17 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Update product'),
-        centerTitle: true,backgroundColor: Colors.green,shape:RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20),bottomRight: Radius.circular(20))) ,),
+      appBar: AppBar(
+        title: const Text('Update product'),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -45,7 +55,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 TextFormField(
                   controller: _nameTEController,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Product name',
                     labelText: 'Product name',
                   ),
@@ -53,7 +63,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 TextFormField(
                   controller: _codeTEController,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Product code',
                     labelText: 'Product code',
                   ),
@@ -62,7 +72,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                   controller: _quantityTEController,
                   keyboardType: TextInputType.number,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Quantity',
                     labelText: 'Quantity',
                   ),
@@ -71,20 +81,23 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                   controller: _priceTEController,
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Unit price',
                     labelText: 'Unit price',
                   ),
                 ),
                 TextFormField(
                   controller: _imageUrlTEController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Image Url',
                     labelText: 'Image Url',
                   ),
                 ),
                 const SizedBox(height: 8),
-                FilledButton(onPressed: _updateProduct, child: Text('Update')),
+                FilledButton(
+                  onPressed: _updateProduct,
+                  child: const Text('Update'),
+                ),
               ],
             ),
           ),
@@ -98,7 +111,42 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
       return;
     }
 
-    // TODO: CALL API TO UPDATE PRODUCT
+    final url = Uri.parse(
+        'deleteProductsUrl${widget.product.id}',
+    );
+
+
+    final body = jsonEncode({
+      "ProductName": _nameTEController.text.trim(),
+      "ProductCode": _codeTEController.text.trim(),
+      "Qty": int.tryParse(_quantityTEController.text.trim()) ?? 0,
+      "UnitPrice": double.tryParse(_priceTEController.text.trim()) ?? 0,
+      "Img": _imageUrlTEController.text.trim(),
+    });
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {"Content-Type": "application/json"},
+        body: body,
+      );
+
+      if (response.statusCode == 200) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("The product is updated")),
+        );
+        Navigator.pop(context, true);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("❌ Update faild code: ${response.statusCode}")),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("There is some error $e")),
+      );
+    }
   }
 
   @override

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+
 import 'package:ostad_flutter/Module%2013_14%20API/Assignment_CRUD_APP/snackbar_message.dart';
 
 
@@ -132,6 +133,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
     _addProductInProgress = true;
     setState(() {});
     // Prepare URI to request
+    // Uri uri = Uri.parse(Urls.postProductUrl);
     Uri uri = Uri.parse('http://35.73.30.144:2008/api/v1/CreateProduct');
     // Prepare data
     int totalPrice = int.parse(_priceTEController.text) *
@@ -144,7 +146,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
       "UnitPrice":  int.parse(_priceTEController.text.trim()),
       "TotalPrice": totalPrice
     };
-    // Request with data
+    // Request with data( post command)
     Response response = await post(
       uri,
       headers: {
