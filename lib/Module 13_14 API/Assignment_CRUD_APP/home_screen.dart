@@ -29,24 +29,31 @@ class _HomeScreenState extends State<home_screen_for_CRUD_app> {
     _productList.clear();
     _getProductInProgress = true;
     setState(() {});
-
+// get product ar jonno uri banano hossa(API thaka data aina home screen a dakanor jonno.
     Uri uri = Uri.parse(Urls.getProductsUrl);
     Response response = await get(uri);
 
-    debugPrint(response.statusCode.toString());
+    debugPrint(response.statusCode.toString());   //Debug print use korta hoi code ar time a jata haker ai print info na pani
     debugPrint(response.body);
 
     if (response.statusCode == 200) {
       final decodedJson = jsonDecode(response.body);
       for (Map<String, dynamic> productJson in decodedJson['data']) {
+        // decodedJson['data'] → API response এর ভেতরের data লিস্ট
+        // 'in' মানে → ওই লিস্ট থেকে একটা একটা করে Map<String, dynamic> বের হচ্ছে
+        // প্রতিবার লুপ ঘোরার সময় সেটা productJson নামে আসছে
+
         ProductModel productModel = ProductModel.fromJson(productJson);
+        // এখানে প্রতিটা productJson কে ProductModel object এ কনভার্ট করা হচ্ছে
+        // ProductModel.fromJson() constructor JSON কে Dart object বানায়
+
         _productList.add(productModel);
+        // অবজেক্টটাকে আমাদের লিস্টে যোগ করছি
       }
-    }
     _getProductInProgress = false;
 
     setState(() {});
-  }
+  }}
 
   @override
   Widget build(BuildContext context) {
