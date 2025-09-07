@@ -112,7 +112,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     }
 
     final url = Uri.parse(
-        'deleteProductsUrl${widget.product.id}',
+        'http://35.73.30.144:2008/api/v1/UpdateProduct/${widget.product.id}'
     );
 
 
@@ -127,7 +127,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     try {
       final response = await http.post(
         url,
-        headers: {"Content-Type": "application/json"},
+         headers: {"Content-Type": "application/json"},
         body: body,
       );
 
@@ -159,3 +159,5 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     super.dispose();
   }
 }
+
+// Sohel
