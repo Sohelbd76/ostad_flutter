@@ -126,18 +126,23 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
   }
 
   Future<void> _onTapAddProductButton() async {
-    if (_formKey.currentState!.validate() == false) {
+    if (_formKey.currentState!.validate() == false) {  // jodi _formKey ar modda kisu nathaka mane page jodi update na hoi mane flase thaka thahola kisu return korba na
+
       return;
     }
 
-    _addProductInProgress = true;
+    _addProductInProgress = true;  // page update na hola progress bar sudu gurta thakba
     setState(() {});
-    // Prepare URI to request
+    // 1. Prepare URI to request post details to API
     // Uri uri = Uri.parse(Urls.postProductUrl);
+
     Uri uri = Uri.parse('http://35.73.30.144:2008/api/v1/CreateProduct');
+
     // Prepare data
+
     int totalPrice = int.parse(_priceTEController.text) *
         int.parse(_quantityTEController.text);
+
     Map<String, dynamic> requestBody = {
       "ProductName": _nameTEController.text.trim(),
       "ProductCode": int.parse(_codeTEController.text.trim()),
@@ -146,11 +151,12 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
       "UnitPrice":  int.parse(_priceTEController.text.trim()),
       "TotalPrice": totalPrice
     };
-    // Request with data( post command)
-    Response response = await post(
-      uri,
+
+    // Request with data( post command). Akane data post kora hossa API ka and data jassa ki na tar response feed back kora jar maddoma bujta parbo data jsssa ki
+
+    Response response = await post(uri,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json'            // post ar command== post(uri,headers:{},body
       },
       body: jsonEncode(requestBody),
     );

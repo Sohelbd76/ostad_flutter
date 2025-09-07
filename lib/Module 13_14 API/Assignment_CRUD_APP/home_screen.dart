@@ -37,7 +37,7 @@ class _HomeScreenState extends State<home_screen_for_CRUD_app> {
     debugPrint(response.body);
 
     if (response.statusCode == 200) {
-      final decodedJson = jsonDecode(response.body);
+      final decodedJson = jsonDecode(response.body);     // decode kora data decodedJson variable ar modda raka hoilo
       for (Map<String, dynamic> productJson in decodedJson['data']) {
         // decodedJson['data'] → API response এর ভেতরের data লিস্ট
         // 'in' মানে → ওই লিস্ট থেকে একটা একটা করে Map<String, dynamic> বের হচ্ছে
